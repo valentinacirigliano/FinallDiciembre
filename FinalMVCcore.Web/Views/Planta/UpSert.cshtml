@@ -1,0 +1,69 @@
+﻿@using FinalMVCcore.Web.ViewModels;
+@model PlantaEditVm;
+
+@{
+    ViewData["Title"] = "UpSert";
+}
+
+<form method="post" asp-controller="Planta" asp-action="UpSert" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Planta.PlantaId" />
+    <div class="border p-3 mt-4 row ">
+        <div class="row">
+            <div class="col-6">
+                <div class="row pb-2">
+                    <h2 class="text-primary">@(Model.Planta.PlantaId == 0 ? "Nueva Planta" : "Editar Planta")</h2>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="Planta.Descripcion" class="form-label"></label>
+                    <input asp-for="Planta.Descripcion" class="form-control" />
+                    <span asp-validation-for="Planta.Descripcion" class="text-danger"></span>
+                </div>
+
+
+            </div>
+            
+        </div>
+        <div class="row">
+			<div class="mb-3  col-6">
+				<label asp-for="Planta.Precio" class="form-label"></label>
+				<input asp-for="Planta.Precio" class="form-control" />
+				<span asp-validation-for="Planta.Precio" class="text-danger"></span>
+			</div>
+        </div>
+        <div class="row">
+			<div class="mb-3 col-6">
+				<label asp-for="Planta.TipoDePlantaId" class="form-label"></label>
+				<select asp-for="Planta.TipoDePlantaId" asp-items="Model.TiposDePlantas" class="form-select">
+					<option disabled selected>Seleccione Tipo de Planta</option>
+				</select>
+				<span asp-validation-for="Planta.TipoDePlantaId" class="text-danger"></span>
+			</div>
+        </div>
+
+        
+
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-warning" style="width:200px">
+                    <i class="bi bi-floppy"></i> &nbsp;
+                    Guardar
+            </button>
+
+            <a asp-controller="Planta" asp-action="Index" style="width:200px" class="btn btn-success">
+                <i class="bi bi-backspace"></i>  &nbsp;
+                Volver
+            </a>
+
+        </div>
+
+    </div>
+</form>
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+
+}

@@ -1,0 +1,52 @@
+﻿/* Estilos generales */
+#tblPlantas_wrapper {
+    margin-bottom: 20px; /* Ajusta la distancia entre la tabla y los elementos de paginado */
+}
+/* Agrega un margen arriba y abajo a la clase input-group */
+.input-group {
+    margin: 10px 0;
+}
+/* Estilos para la barra de búsqueda y la opción de mostrar entradas */
+#tblPlantas_filter,
+#tblPlantas_length {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px; /* Ajusta el margen inferior */
+}
+
+    /* Estilos para los elementos dentro de la barra de búsqueda */
+    #tblPlantas_filter label,
+    #tblPlantas_filter input {
+        vertical-align: middle; /* Alinea verticalmente el texto y el campo de entrada */
+    }
+
+    /* Estilos para la opción de mostrar entradas */
+    #tblPlantas_length label,
+    #tblPlantas_length select {
+        vertical-align: middle; /* Alinea verticalmente el texto y el menú desplegable */
+    }
+
+/* Estilos para los botones de paginado */
+#tblPlantas_paginate {
+    text-align: center;
+}
+
+    #tblPlantas_paginate .paginate_button {
+        margin: 0 5px; /* Ajusta la distancia entre los botones */
+        border-radius: 10px; /* Bordes redondeados */
+        padding: 5px 10px; /* Ajusta el espacio interno */
+        background-color: #e0e0e0; /* Color de fondo */
+        text-decoration: none; /* Elimina el subrayado */
+    }
+
+    #tblPlantas_paginate .paginate_button.current {
+            background-color: #3498db; /* Color de fondo para la página actual */
+            color: #fff; /* Texto en color blanco para la página actual */
+            border: 1px solid #3498db; /* Borde para la página actual */
+    }
+
+    #tblPlantas_paginate.paginate_button:hover {
+            background-color: #bdc3c7; /* Color de fondo al pasar el ratón sobre los botones */
+            border: 1px solid #bdc3c7; /* Borde al pasar el ratón sobre los botones */
+            color: #000; /* Texto en color negro al pasar el ratón sobre los botones */
+    }

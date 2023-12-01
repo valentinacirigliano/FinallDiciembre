@@ -1,0 +1,53 @@
+﻿@using FinalMVCcore.Models;
+@model TipoDePlanta;
+
+@{
+    ViewData["Title"] = "UpSert";
+}
+
+<form method="post" asp-controller="TipoDePlanta" asp-action="UpSert" enctype="multipart/form-data">
+    <input type="hidden" asp-for="TipoPlantaId" />
+    <div class="border p-3 mt-4 row ">
+        <div class="row">
+            <div class="col-6">
+                <div class="row pb-2">
+                    <h2 class="text-primary">@(Model.TipoPlantaId == 0 ? "Nuevo Tipo de Planta" : "Editar Planta")</h2>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label"></label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+
+            </div>
+            
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-warning" style="width:200px">
+                    <i class="bi bi-floppy"></i> &nbsp;
+                    Guardar
+            </button>
+
+            <a asp-controller="TipoDePlanta" asp-action="Index" style="width:200px" class="btn btn-success">
+                <i class="bi bi-backspace"></i>  &nbsp;
+                Volver
+            </a>
+
+        </div>
+
+    </div>
+</form>
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+
+}
